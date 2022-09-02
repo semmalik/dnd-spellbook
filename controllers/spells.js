@@ -8,7 +8,7 @@ module.exports = {
       let spells = await Spell.find({ userId: req.user.id });
       spells = spells.map((spell) => {
         //convert level to correct string
-        const levels = ['cantrip', '1st', '2nd', '3rd'];
+        const levels = ['Cantrip', '1st', '2nd', '3rd'];
         const level = spell.level < 4 ? levels[spell.level] : `${spell.level}th`;
         //Mongoose gives a mongoose object which when spread reveals all those hidden properties
         //Using spread might cause type problems on the id in the future

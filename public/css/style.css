@@ -73,10 +73,10 @@ a {
 .spell {
   padding: 16px;
   margin: 16px 0;
-  background: lightblue
+  background: lightgrey
     url("https://cdn.glitch.global/d8728892-fd46-4386-a360-c5a5794e8210/paper-white.jpg?v=1662134011135")
-    no-repeat fixed top;
-  border-radius: 4px;
+    no-repeat top;
+  border-radius: 2px;
   box-shadow: var(--shadow-elevation-medium);
 }
 

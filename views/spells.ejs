@@ -18,15 +18,12 @@
                 <div class="spell-heading">
                   <h3 class='spell-name'><%= spell.name %></h3>
                   <p class='spell-level'>
-                      <%= spell.level %> Level
+                      <%= spell.level %> <%= spell.level !== 'Cantrip' ? 'Level' : ""%> - <%= spell.school%>
                   </p>
                 </div>
                 <div class='divider'></div>
                 <div class='spell-desc'>
                   <%= spell.description%> 
-                </div>
-                <div class='spell-desc'> 
-                  <%= spell.school%>
                 </div>
                 <div class="spell-btn-group">
                   <button class='spell-edit'>
