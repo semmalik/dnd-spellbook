@@ -6,10 +6,11 @@ module.exports = {
     console.log(req.user);
     try {
       let spells = await Spell.find({ userId: req.user.id });
-      spells.map((spell) => {
+      spells = spells.map((spell) => {
         //convert level to correct string
         const levels = ['cantrip', '1st', '2nd', '3rd'];
-        const level = spell.level < 4 ? levels[level] : `${level}th`;
+        const level = spell.level < 4 ? levels[spell.level] : `${spell.level}th`;
+        console.log(level);
         return {...spell, level};
       })
       res.render("spells.ejs", { spells: spells, user: req.user });
