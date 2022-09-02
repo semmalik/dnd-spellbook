@@ -2,17 +2,17 @@ const deleteBtn = document.querySelectorAll('.del')
 const spellItem = document.querySelectorAll('span.not')
 const spellComplete = document.querySelectorAll('span.completed')
 
-// Array.from(deleteBtn).forEach((el)=>{
-//     el.addEventListener('click', deleteSpell)
+Array.from(deleteBtn).forEach((el)=>{
+    el.addEventListener('click', deleteSpell)
+})
+
+// Array.from(spellItem).forEach((el)=>{
+//     el.addEventListener('click', markComplete)
 // })
 
-Array.from(spellItem).forEach((el)=>{
-    el.addEventListener('click', markComplete)
-})
-
-Array.from(spellComplete).forEach((el)=>{
-    el.addEventListener('click', markIncomplete)
-})
+// Array.from(spellComplete).forEach((el)=>{
+//     el.addEventListener('click', markIncomplete)
+// })
 
 async function deleteTodo(){
     const todoId = this.parentNode.dataset.id

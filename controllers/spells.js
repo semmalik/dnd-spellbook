@@ -22,7 +22,7 @@ module.exports = {
   },
   createSpell: async (req, res) => {
     try {
-      const spellName = req.body.name.replace(' ','-');
+      const spellName = req.body.name.toLowerCase().replace(' ','-');
       //find the spell in the api
       const response = await fetch(
         `https://www.dnd5eapi.co/api/spells/${spellName}`
@@ -49,6 +49,16 @@ module.exports = {
       console.log(err);
     }
   },
+  deleteTodo: async (req, res)=>{
+      console.log(req.body.spellIdFromJSFile)
+      try{
+          await Todo.findOneAndDelete({_id:req.body.todoIdFromJSFile})
+          console.log('Deleted Todo')
+          res.json('Deleted It')
+      }catch(err){
+          console.log(err)
+      }
+  }
 
   // markComplete: async (req, res)=>{
   //     try{
