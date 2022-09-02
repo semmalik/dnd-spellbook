@@ -9,4 +9,6 @@ router.post("/createSpell", spellsController.createSpell);
 
 router.delete("/deleteSpell", spellsController.deleteSpell);
 
+router.update("/editSpell", spellsController.editSpell);
+
 module.exports = router;
