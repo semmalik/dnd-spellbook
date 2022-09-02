@@ -11,15 +11,18 @@
 <body>
   <main class="max-width">
     <section>
-      <h1>Spells</h1>
+      <h1 class="spellList-heading">Spells</h1>
       <ul>
       <% spells.forEach( spell => { %>
               <li class='spell' data-id='<%=spell._id%>'>
-                  <span class='spell_name'><%= spell.name %></span>
-                  <span class='spell_level'>
+                <div class="spell-heading">
+                  <h3 class='spell-name'><%= spell.name %></h3>
+                  <p class='spell-level'>
                       <%= spell.level === 0 ? 'cantrip' : spell.level.toString() %>
-                  </span>
-                  <div class='spell_desc'><%= spell.description %></div>
+                  </p>
+                </div>
+                  
+                <div class='spell-desc'><%= spell.description %></div>
               </li>
       <% }) %>    
       </ul>
