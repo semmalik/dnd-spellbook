@@ -30,6 +30,7 @@ const User = require('../models/User')
       }
       req.logIn(user, (err) => {
         if (err) { return next(err) }
+        console.log('logged in', user)
         req.flash('success', { msg: 'Success! You are logged in.' })
         res.redirect(req.session.returnTo || '/spells')
       })
