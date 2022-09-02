@@ -22,12 +22,19 @@
                   </p>
                 </div>
                 <div class='divider'></div>
-                <div class='spell-desc'><%= spell.description %></div>
+                <div class='spell-desc'>
+                  <%= spell.description%> 
+                </div>
+                <div class='spell-desc'> 
+                  <%= spell.school%>
+                </div>
                 <div class="spell-btn-group">
-                  <form action="/spells/createSpell" method='POST'>
-                    <input type="text" placeholder="Enter a spell name" name='name'>
-                    <input type="submit">
-                  </form>
+                  <button class='spell-edit'>
+                    Edit
+                  </button>
+                  <button class='spell-del'>
+                    Delete
+                  </button>
                 </div>
               </li>
       <% }) %>    

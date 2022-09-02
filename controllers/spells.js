@@ -38,6 +38,7 @@ module.exports = {
           name: spell.name,
           description: spell.desc.join(" "),
           level: spell.level,
+          school: spell.school.name,
           userId: req.user.id,
         });
         console.log("Spell has been added!");

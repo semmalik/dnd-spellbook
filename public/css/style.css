@@ -91,3 +91,14 @@ a {
   padding: 16px 0;
   line-height: 1.4;
 }
+
+.spell-btn-group {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.spell-btn-group button{
+  margin: 8px;
+  font-size: 1.25rem;
+}

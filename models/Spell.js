@@ -13,6 +13,10 @@ const spellSchema = new mongoose.Schema({
     type: Number,
     required: true
   },
+  school: {
+    type: String,
+    required: true
+  },
   userId: {
     type: String,
     required: true,
