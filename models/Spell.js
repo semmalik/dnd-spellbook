@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 
-const TodoSchema = new mongoose.Schema({
+const spellSchema = new mongoose.Schema({
   spellName: {
     type: String,
     required: true,
@@ -9,34 +9,14 @@ const TodoSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  spellName: {
-    type: String,
-    required: true,
-  },
-  spellName: {
-    type: String,
-    required: true,
-  },
-  spellName: {
-    type: String,
-    required: true,
-  },
-  
-  
-  
-  
-  todo: {
-    type: String,
-    required: true,
-  },
-  completed: {
-    type: Boolean,
-    required: true,
+  level: {
+    type: Number,
+    required: true
   },
   userId: {
     type: String,
-    required: true
+    required: true,
   }
 })
 
-module.exports = mongoose.model('Todo', TodoSchema)
+module.exports = mongoose.model('Spell', spellSchema)

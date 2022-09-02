@@ -1,16 +1,16 @@
 const express = require("express");
 const router = express.Router();
-const todosController = require("../controllers/spells);
+const todosController = require("../controllers/spells");
 const { ensureAuth } = require("../middleware/auth");
 
-router.get("/", ensureAuth, spellListController.getSpell);
+router.get("/", ensureAuth, spellsController.getSpell);
 
-router.post("/createSpell", spellListController.createSpell);
+router.post("/createSpell", spellsController.createSpell);
 
-router.put("/markComplete", spellListController.markComplete);
+router.put("/markComplete", spellsController.markComplete);
 
-router.put("/markIncomplete", spellListController.markIncomplete);
+router.put("/markIncomplete", spellsController.markIncomplete);
 
-router.delete("/deleteSpell", spellListController.deleteSpell);
+router.delete("/deleteSpell", spellsController.deleteSpell);
 
 module.exports = router;

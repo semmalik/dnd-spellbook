@@ -1,20 +1,20 @@
-const Todo = require('../models/Todo')
+const Spell = require('../models/Spell')
 
 module.exports = {
     getSpells: async (req,res)=>{
         console.log(req.user)
         try{
-            const spells = await Todo.find({userId:req.user.id})
-            res.render('todos.ejs', {spells: spells, left: itemsLeft, user: req.user})
+            const spells = await Spell.find({userId:req.user.id})
+            res.render('spells.ejs', {spells: spells, user: req.user})
         }catch(err){
             console.log(err)
         }
     },
-    createTodo: async (req, res)=>{
+    createSpell: async (req, res)=>{
         try{
-            await Todo.create({todo: req.body.todoItem, completed: false, userId: req.user.id})
-            console.log('Todo has been added!')
-            res.redirect('/todos')
+            await Spell.create({spellName: req.body.spellName, description: req.body.description, level: req.body.level, userId: req.user.id})
+            console.log('Spell has been added!')
+            res.redirect('/spells')
         }catch(err){
             console.log(err)
         }
