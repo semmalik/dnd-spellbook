@@ -59,6 +59,16 @@ module.exports = {
           console.log(err)
       }
   },
+  editSpell: async (req, res)=>{
+      console.log(req.body.spellIdFromJSFile)
+      try{
+          await Spell.findOneAndDelete({_id:req.body.spellIdFromJSFile}) // ????
+          console.log('Spell Edited')
+          res.json('Edited it')
+      }catch(err){
+          console.log(err)
+      }
+  },
 
   // markComplete: async (req, res)=>{
   //     try{
