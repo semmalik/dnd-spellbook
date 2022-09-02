@@ -5,7 +5,13 @@ module.exports = {
   getSpells: async (req, res) => {
     console.log(req.user);
     try {
-      const spells = await Spell.find({ userId: req.user.id });
+      let spells = await Spell.find({ userId: req.user.id });
+      spells.map((spell) => {
+        //convert level to correct string
+        const levels = ['cantrip', '1st', '2nd', '3rd'];
+        const level = spell.level < 4 ? levels[level] : `${level}th`;
+        return {...spell, level};
+      })
       res.render("spells.ejs", { spells: spells, user: req.user });
     } catch (err) {
       console.log(err);
