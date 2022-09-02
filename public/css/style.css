@@ -3,11 +3,16 @@
   --content-max-width: 900px;
 }
 
-
 /* Basic Univeral Styles */
 
+html {
+  background-image: linear-gradient(180deg, #797979, #1d1c1c);
+  background-attachment: fixed; /*edit*/
+}
+
 h1 {
-  color: red;
+  font-size: 2.5rem;
+  color: white;
 }
 .completed {
   text-decoration: line-through;
@@ -18,6 +23,7 @@ h1 {
 }
 a {
   text-decoration: none;
+  color: #adcdff;
 }
 
 /* Helper Classes */
@@ -29,8 +35,16 @@ a {
 
 /* Spell View */
 
+.spell-heading {
+  text-align: center;
+  
+}
+
 .spell {
   padding: 16px;
   background: lightblue
-    url("https://cdn.glitch.global/d8728892-fd46-4386-a360-c5a5794e8210/paper-white.jpg?v=1662134011135") no-repeat fixed ;
+    url("https://cdn.glitch.global/d8728892-fd46-4386-a360-c5a5794e8210/paper-white.jpg?v=1662134011135")
+    no-repeat fixed top;
+  border-radius: 4px;
+  
 }
