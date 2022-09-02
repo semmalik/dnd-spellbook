@@ -14,15 +14,18 @@ module.exports = {
     try {
       //find the spell in the api
       const response = await fetch(`https://www.dnd5eapi.co/api/spells/${req.body.name}`);
-      
-      //found
       const spell = await response.json();
       
       //not found
+      if(spell['error']) {
+        console.log("Spell not found!");
+        res.redirect("/spells");
+      }
+      
       await Spell.create({
-        name: req.body.name,
-        description: req.body.description,
-        level: req.body.level,
+        name: spell.name,
+        description: spell.desc,
+        level: spell.level,
         userId: req.user.id,
       });
       console.log("Spell has been added!");

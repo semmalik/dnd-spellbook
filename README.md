@@ -18,7 +18,7 @@ A Simple Dungeons and Dragons spell saver app using the MVC Architecture and Goo
 
 # Packages/Dependencies used 
 
-bcrypt, connect-mongo, dotenv, ejs, express, express-flash, express-session, mongodb, mongoose, morgan, nodemon, passport, passport-local, validator
+bcrypt, connect-mongo, dotenv, ejs, express, express-flash, express-session, mongodb, mongoose, morgan, nodemon, node-fetch, passport, passport-local, validator
 
 ---
 
