@@ -1,3 +1,4 @@
+const fetch = require("node-fetch");
 const Spell = require("../models/Spell");
 
 module.exports = {
@@ -13,22 +14,25 @@ module.exports = {
   createSpell: async (req, res) => {
     try {
       //find the spell in the api
-      const response = await fetch(`https://www.dnd5eapi.co/api/spells/${req.body.name}`);
+      const response = await fetch(
+        `https://www.dnd5eapi.co/api/spells/${req.body.name}`
+      );
       const spell = await response.json();
-      
+
       //not found
-      if(spell['error']) {
+      if (spell["error"]) {
         console.log("Spell not found!");
-        res.redirect("/spells");
+        console.log(spell);
+      } else {
+        await Spell.create({
+          name: spell.name,
+          description: spell.desc,
+          level: spell.level,
+          userId: req.user.id,
+        });
+        console.log("Spell has been added!");
       }
-      
-      await Spell.create({
-        name: spell.name,
-        description: spell.desc,
-        level: spell.level,
-        userId: req.user.id,
-      });
-      console.log("Spell has been added!");
+
       res.redirect("/spells");
     } catch (err) {
       console.log(err);
