@@ -10,10 +10,10 @@ module.exports = {
         //convert level to correct string
         const levels = ['cantrip', '1st', '2nd', '3rd'];
         const level = spell.level < 4 ? levels[spell.level] : `${spell.level}th`;
-        //spread of objects donesn't work in node :(
-        spell.newLevel = level;
-        console.log(spell);
-        return spell;
+        //Mongoose gives a mongoose object which when spread reveals all those hidden properties
+        //Using spread might cause type problems on the id in the future
+        //Given that this object is just being used to display data in a view it should be fine
+        return {...spell.toObject(), level};
       })
       res.render("spells.ejs", { spells: spells, user: req.user });
     } catch (err) {

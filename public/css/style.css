@@ -11,3 +11,8 @@ h1{
 a{
   text-decoration: none;
 }
+
+.spell {
+  padding: 16px;
+  background: url("https://cdn.glitch.global/d8728892-fd46-4386-a360-c5a5794e8210/paper-white.jpg?v=1662134011135");
+}
