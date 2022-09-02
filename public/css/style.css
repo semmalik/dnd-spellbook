@@ -1,18 +1,36 @@
-h1{
-    color: red;
+/* CSS Variables */
+:root {
+  --content-max-width: 900px;
 }
-.completed{
-    text-decoration: line-through;
-    color: gray;
+
+
+/* Basic Univeral Styles */
+
+h1 {
+  color: red;
 }
-.not{
-    text-decoration: underline;
+.completed {
+  text-decoration: line-through;
+  color: gray;
 }
-a{
+.not {
+  text-decoration: underline;
+}
+a {
   text-decoration: none;
 }
 
+/* Helper Classes */
+.max-width {
+  width: 100%;
+  max-width: var(--content-max-width);
+  margin: 0 auto;
+}
+
+/* Spell View */
+
 .spell {
   padding: 16px;
-  background: url("https://cdn.glitch.global/d8728892-fd46-4386-a360-c5a5794e8210/paper-white.jpg?v=1662134011135");
+  background: lightblue
+    url("https://cdn.glitch.global/d8728892-fd46-4386-a360-c5a5794e8210/paper-white.jpg?v=1662134011135") no-repeat fixed ;
 }
