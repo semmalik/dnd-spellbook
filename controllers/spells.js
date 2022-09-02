@@ -13,9 +13,10 @@ module.exports = {
   },
   createSpell: async (req, res) => {
     try {
+      const spellName = req.body.name.replace(' ','-');
       //find the spell in the api
       const response = await fetch(
-        `https://www.dnd5eapi.co/api/spells/${req.body.name}`
+        `https://www.dnd5eapi.co/api/spells/${spellName}`
       );
       const spell = await response.json();
 
@@ -26,7 +27,7 @@ module.exports = {
       } else {
         await Spell.create({
           name: spell.name,
-          description: spell.desc,
+          description: spell.desc.join(" "),
           level: spell.level,
           userId: req.user.id,
         });
