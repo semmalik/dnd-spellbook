@@ -49,16 +49,16 @@ module.exports = {
       console.log(err);
     }
   },
-  deleteTodo: async (req, res)=>{
+  deleteSpell: async (req, res)=>{
       console.log(req.body.spellIdFromJSFile)
       try{
-          await Todo.findOneAndDelete({_id:req.body.todoIdFromJSFile})
-          console.log('Deleted Todo')
+          await Spell.findOneAndDelete({_id:req.body.spellIdFromJSFile})
+          console.log('Deleted Spell')
           res.json('Deleted It')
       }catch(err){
           console.log(err)
       }
-  }
+  },
 
   // markComplete: async (req, res)=>{
   //     try{

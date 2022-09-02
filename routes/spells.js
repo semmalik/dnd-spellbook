@@ -7,6 +7,6 @@ router.get("/", ensureAuth, spellsController.getSpells);
 
 router.post("/createSpell", spellsController.createSpell);
 
-//router.delete("/deleteSpell", spellsController.deleteSpell);
+router.delete("/deleteSpell", spellsController.deleteSpell);
 
 module.exports = router;
