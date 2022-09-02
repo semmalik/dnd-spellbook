@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 
 const spellSchema = new mongoose.Schema({
-  spellName: {
+  name: {
     type: String,
     required: true,
   },

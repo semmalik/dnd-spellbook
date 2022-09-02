@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const todosController = require("../controllers/spells");
+const spellsController = require("../controllers/spells");
 const { ensureAuth } = require("../middleware/auth");
 
 router.get("/", ensureAuth, spellsController.getSpell);

@@ -10,15 +10,18 @@
 <body>
     <h1>Spells</h1>
     <ul>
-    <% todos.forEach( el => { %>
-            <li class='todoItem' data-id='<%=el._id%>'>
-                <span class='<%= el.completed === true ? 'completed' : 'not'%>'><%= el.todo %></span>
-                <span class='del'> Delete </span>
+    <% spells.forEach( spell => { %>
+            <li class='todoItem' data-id='<%=spell._id%>'>
+                <span class='spell_name'><%= spell.name %></span>
+                <span class='spell_level'>
+                    <% spell%>
+                </span>
+                <div class='spell_desc'><%= spell.description %></div>
             </li>
     <% }) %>    
     </ul>
 
-    <h2><%= user.userName %> has <%=  %> total spells.</h2>
+    <h2><%= user.userName %> has <%= spells.length %> total spells.</h2>
 
     <form action="/todos/createTodo" method='POST'>
         <input type="text" placeholder="Enter Todo Item" name='todoItem'>
