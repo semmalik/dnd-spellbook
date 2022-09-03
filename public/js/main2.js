@@ -65,7 +65,7 @@ async function editSpell(){
     }
 }
 
-const toggleModal = async () => {
+async function toggleModal(){
   console.log('toggling the modal!')
   //get current classes of modal wrapper
   const classList = document.querySelector('#modal-wrapper').classList;

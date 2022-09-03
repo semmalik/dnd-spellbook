@@ -91,10 +91,23 @@ a {
   flex-direction: column;
 }
 
-a.spell {
-  
+
+h1.index{
+  display: flex;
+  justify-content: center;
+  padding-top: 1em
 }
 
+a.spell {
+  color: black; 
+  width: 10%; 
+  text-align: center;
+}
+
+a.spell:hover {
+  background: #6CDFEA;
+  transition: 0.3s;
+}
 /* Spell View */
 
 .spellList-heading {
