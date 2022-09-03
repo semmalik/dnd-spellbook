@@ -2,6 +2,7 @@ const deleteBtn = document.querySelectorAll('.spell-del')
 const editBtn = document.querySelectorAll('.spell-edit')
 const spellItem = document.querySelectorAll('span.not')
 const spellComplete = document.querySelectorAll('span.completed')
+const modal
 
 Array.from(deleteBtn).forEach((el)=>{
     el.addEventListener('click', deleteSpell)
