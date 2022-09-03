@@ -9,9 +9,9 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <main class="max-width viewport-wrapper">
-    <section>
-      <h1 class="spellList-heading">Spells</h1>
+  <main class="viewport-wrapper">
+    <h1 class="spellList-heading">Spells</h1>
+    <section class="max-width">
       <ul>
       <% spells.forEach( spell => { %>
               <li class='spell' data-id='<%=spell._id%>'>
@@ -40,7 +40,7 @@
       <h2><%= user.userName %> has <%= spells.length %> total spells.</h2>
     </section>
     
-    <section>
+    <section class="max-width">
       <form action="/spells/createSpell" method='POST'>
         <input type="text" placeholder="Enter a spell name" name='name'>
         <input type="submit">

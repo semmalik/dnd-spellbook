@@ -112,7 +112,11 @@ a.spell:hover {
 
 .spellList-heading {
   text-align: center;
-  margin: 16px;
+  margin: 16px 0;
+  padding: 8px;
+  background: #424242;
+  border-top: 3px solid #e0c434;
+  border-bottom: 3px solid #e0c434;
 }
 
 .spell {
