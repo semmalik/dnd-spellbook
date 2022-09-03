@@ -73,8 +73,11 @@ a {
 
 /* Index View */
 .flex-centered {
-  
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
 
 /* Spell View */
 
