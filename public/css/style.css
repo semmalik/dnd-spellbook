@@ -88,8 +88,12 @@ a {
   align-items: center;
   justify-content: center;
   flex: 1;
+  flex-direction: column;
 }
 
+a.spell {
+  
+}
 
 /* Spell View */
 
@@ -136,8 +140,8 @@ a {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100vw;
-  height: 100vh;
+  right: 0;
+  bottom: 0;
   background-color: #474747;
   opacity: 0.5;
 }

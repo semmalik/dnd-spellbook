@@ -2,7 +2,7 @@ const deleteBtn = document.querySelectorAll('.spell-del')
 const editBtn = document.querySelectorAll('.spell-edit')
 const spellItem = document.querySelectorAll('span.not')
 const spellComplete = document.querySelectorAll('span.completed')
-const modalOverlay = document.querySelectorAll('.modalOverlay')
+const modalOverlay = document.querySelectorAll('.modal-overlay')
 
 // Spell CRUD Event Listeners
 Array.from(deleteBtn).forEach((el)=>{
