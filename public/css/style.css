@@ -155,8 +155,7 @@ a.spell:hover {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #474747;
-  opacity: 0.5;
+  background-color: hsla(217 0% 28% /.5);
 }
 
 .modal {
@@ -166,8 +165,19 @@ a.spell:hover {
   right: 0;
   bottom: 0;
   margin: auto;
-  width: 200px;
-  height: 200px;
+  width: 400px;
+  height: 300px;
+  /*  Overflow so the modal can scroll if the content is too long  */
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  border: 4px solid #460d75;
+  text-align: center;
+  border-radius: 4px;
+}
+
+.modal-spell-form {
+  flex: 1;
   background: lightgrey
     url("https://cdn.glitch.global/d8728892-fd46-4386-a360-c5a5794e8210/paper-white.jpg?v=1662134011135")
     no-repeat top;
