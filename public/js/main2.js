@@ -66,9 +66,18 @@ async function editSpell(){
 }
 
 const toggleModal = () => {
-  //get current class
+  console.log('toggling the modal!')
+  //get current classes of modal wrapper
+  const classList = document.querySelector('#modal-wrapper').classList;
   
   //toggle class for modal and overlay
+  if(classList.contains('show')) {
+    classList.remove('show');
+    classList.add('hide');
+  } else {
+    classList.remove('hide');
+    classList.add('show');
+  }
 };
 
 // async function markComplete(){
