@@ -10,7 +10,7 @@ Array.from(deleteBtn).forEach((el)=>{
 })
 
 Array.from(editBtn).forEach((el)=>{
-    el.addEventListener('click', editSpell)
+    el.addEventListener('click', toggleModal)
 })
 
 // Array.from(spellItem).forEach((el)=>{

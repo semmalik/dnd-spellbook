@@ -158,3 +158,17 @@ a.spell:hover {
   background-color: #474747;
   opacity: 0.5;
 }
+
+.modal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  width: 200px;
+  height: 200px;
+  background: lightgrey
+    url("https://cdn.glitch.global/d8728892-fd46-4386-a360-c5a5794e8210/paper-white.jpg?v=1662134011135")
+    no-repeat top;
+}
