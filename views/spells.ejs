@@ -12,15 +12,29 @@
   <main class="viewport-wrapper">
     <div class="spellList-heading">
       <h1><%= `${user.userName[0].toUpperCase()}${user.userName.slice(1)}` %>'s Spellbook</h1>
-    </div>
-    
-    
-    <section class="max-width">
       <% if (spells.length) { %>
       <h3 class="spellbook-count">
-        You have learned <%= `${spells.length}` %> <%= spells.length === 1 ? 'spell' : 'spells' %>:
+        Contains <%= `${spells.length}` %> <%= spells.length === 1 ? 'spell' : 'spells' %>
       </h3>
     <% } %>
+    </div>
+    
+        
+    <section class="max-width">
+      <form action="/spells/createSpell" method='POST'>
+        <input type="text"  list="allSpells" placeholder="Enter a spell name" name='name'>
+        <datalist id="allSpells">
+          <%   for (let n of allSpellNames) {    %>
+            <option value='<%= n %>'>
+          <%   }   %>
+        </datalist>
+        <input type="submit" value="Add Spell">
+      </form>
+      
+    </section>
+        
+    
+    <section class="max-width">
       <ul>
       <% spells.forEach( spell => { %>
               <li class='spell' data-id='<%=spell._id%>'>
@@ -45,21 +59,13 @@
               </li>
       <% }) %>    
       </ul>
-
     </section>
     
+                    
     <section class="max-width">
-      <form action="/spells/createSpell" method='POST'>
-        <input type="text"  list="allSpells" placeholder="Enter a spell name" name='name'>
-        <datalist id="allSpells">
-          <%   for (let n of allSpellNames) {    %>
-            <option value='<%= n %>'>
-          <%   }   %>
-        </datalist>
-        <input type="submit" value="Add Spell">
-      </form>
-      <a href="/logout">Logout</a>
+      <a class="logout-button" href="/logout">Logout</a>
     </section>
+    
     
         
     <!--   Modal   -->

@@ -127,7 +127,7 @@ a.spell:hover {
 }
 
 .spellbook-count {
-  margin-top: 1.5rem;
+  margin-top: 1rem;
 }
 
 .spell {
@@ -162,6 +162,10 @@ a.spell:hover {
 .spell-btn-group button{
   margin: 8px;
   font-size: 1.25rem;
+}
+
+.logout-button {
+  margin-bottom: 10px
 }
 
 /* Modal */
