@@ -63,7 +63,7 @@ module.exports = {
       console.log(req.body.spellIdFromJSFile)
       try{
           const spell = await Spell.findById(req.params._id) // ????
-          console.log('found spell')
+          console.log(`found spell: ${spell}`)
           res.send(spell)
       }catch(err){
           console.log(err)

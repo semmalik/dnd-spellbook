@@ -66,9 +66,11 @@ async function getSpell() {
   const description = document.getElementById("description");
   const level = document.getElementById("level");
   
-  const response = await fetch(`spells/getSpell/${spellId}`)
   
-  
+  const response = await fetch('spells/getSpell/${spellId}', {
+            method: 'get',
+            headers: {'Content-type': 'application/json'}
+        })
   
   
   

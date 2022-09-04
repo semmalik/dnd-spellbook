@@ -10,7 +10,7 @@ router.post("/createSpell", spellsController.createSpell);
 router.delete("/deleteSpell", spellsController.deleteSpell);
 
 // changed from router.update to router.put
-router.put("/editSpell", spellsController.editSpell);
+// router.put("/editSpell", spellsController.editSpell);
 
 //getting spell to send to modal
 router.get("/getSpell/:_id", spellsController.editSpell);
