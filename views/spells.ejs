@@ -11,7 +11,7 @@
 <body>
   <main class="viewport-wrapper">
     <h1 class="spellList-heading"><%= `${user.userName[0].toUpperCase()}${user.userName.slice(1)}` %>'s Spellbook</h1>
-    <% if ()
+    
     <section class="max-width">
       <ul>
       <% spells.forEach( spell => { %>
@@ -38,7 +38,6 @@
       <% }) %>    
       </ul>
 
-      <h2><%= user.userName %> has <%= spells.length %> total spells.</h2>
     </section>
     
     <section class="max-width">
