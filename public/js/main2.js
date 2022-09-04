@@ -69,11 +69,11 @@ async function getSpell() {
   const level = document.getElementById("level");
   
   
-  const response = await fetch('spells/getSpell/${spellId}', {
+  const response = await fetch(`spells/getSpell/${spellId}`, {
             method: 'get',
             headers: {'Content-type': 'application/json'}
         })
-  
+  console.log(response)
   
   
   modalSpellId.setAttribute('spellId',`${spellId}`)
