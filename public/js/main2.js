@@ -57,6 +57,14 @@ async function editSpell() {
   toggleModal();
   //Need to get the spell data and pass it to the modal somehow without reloading
   //Easiest way might be a route on the backend to get a spell by id
+  const spellName = document.getElementById('spellName');
+  const description = document.getElementById("description");
+  const level = document.getElementById("level");
+  
+  spellName.value = 'Name value from backend'
+  desc.value = 'Name value from backend'
+  spellName.value = 'Name value from backend'
+  console.log(spellName.value);
 }
 
 //Should be what happens when the modal button is clicked
