@@ -10,9 +10,17 @@
 </head>
 <body>
   <main class="viewport-wrapper">
-    <h1 class="spellList-heading"><%= `${user.userName[0].toUpperCase()}${user.userName.slice(1)}` %>'s Spellbook</h1>
+    <div class="spellList-heading">
+      <h1><%= `${user.userName[0].toUpperCase()}${user.userName.slice(1)}` %>'s Spellbook</h1>
+    </div>
+    
     
     <section class="max-width">
+      <% if (spells.length) { %>
+      <h3 class="spellbook-count">
+        You have learned <%= `${spells.length}` %> <%= spells.length === 1 ? 'spell' : 'spells' %>:
+      </h3>
+    <% } %>
       <ul>
       <% spells.forEach( spell => { %>
               <li class='spell' data-id='<%=spell._id%>'>
@@ -48,7 +56,7 @@
             <option value='<%= n %>'>
           <%   }   %>
         </datalist>
-        <input type="submit">
+        <input type="submit" value="Add Spell">
       </form>
       <a href="/logout">Logout</a>
     </section>

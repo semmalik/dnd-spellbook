@@ -126,6 +126,10 @@ a.spell:hover {
   box-shadow: var(--shadow-elevation-medium);
 }
 
+.spellbook-count {
+  margin-top: 1.5rem;
+}
+
 .spell {
   padding: 16px;
   margin: 16px 0;
