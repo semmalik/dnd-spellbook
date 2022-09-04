@@ -13,7 +13,7 @@ router.delete("/deleteSpell", spellsController.deleteSpell);
 // router.put("/editSpell", spellsController.editSpell);
 
 //getting spell to send to modal
-router.get("/getSpell/:_id", spellsController.editSpell);
+router.get("/getSpell/:_id", spellsController.getSpell);
 
 
 router.put("/saveSpell/:_id", spellsController.saveSpell);
