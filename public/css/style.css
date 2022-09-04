@@ -74,8 +74,8 @@ a {
 
 .divider {
   width: 95%;
-  height: 2px;
-  background-color: #696969;
+  height: 3px;
+  background-color: #431061;
   margin: 0 auto;
 }
 
@@ -132,6 +132,7 @@ a.spell:hover {
   background: lightgrey
     url("https://cdn.glitch.global/d8728892-fd46-4386-a360-c5a5794e8210/paper-white.jpg?v=1662134011135")
     no-repeat top;
+  border: 2px solid #431061;
   border-radius: 2px;
   box-shadow: var(--shadow-elevation-medium);
 }
@@ -160,6 +161,14 @@ a.spell:hover {
 }
 
 /* Modal */
+.modal-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
 .modal-overlay {
   position: absolute;
   top: 0;
