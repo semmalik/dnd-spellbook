@@ -1,3 +1,4 @@
+const addBtnb = document.querySelectorAll(".spell-add")
 const deleteBtn = document.querySelectorAll(".spell-del");
 const editBtn = document.querySelectorAll(".spell-edit");
 const spellItem = document.querySelectorAll("span.not");
@@ -6,6 +7,8 @@ const modalOverlay = document.querySelectorAll(".modal-overlay");
 const saveBtn = document.querySelector('.save')
 
 // Spell CRUD Event Listeners
+el.addEvenListener("click", addSpell);
+
 Array.from(deleteBtn).forEach((el) => {
   el.addEventListener("click", deleteSpell);
 });
@@ -32,6 +35,12 @@ if(saveBtn != null) {
 }
 
 // Spell CRUD Functions
+async function addSpell() {
+  
+}
+
+
+
 async function deleteSpell() {
   //because the delete button is in wrapper you are going to need to go up two
   //levels to get to the li for the delete  Yay! same thing will be needed for editing as well
