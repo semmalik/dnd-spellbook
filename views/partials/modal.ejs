@@ -10,7 +10,24 @@
     </h3>
     <div class="divider"></div>
     <section class="modal-spell-form">
-      Spell form goes here
+      <div id="spellId" spellId="<%=spell._id%>"></div>
+        <div>
+            <input type="text" id="spellName" name="spellName" value="<%-spell.name%>">
+            <label for="spellName">Spell Name</label>
+        </div>
+        <div>
+            <textarea id="description" name="description"><%-spell.description%></textarea>
+            <label for="description">Description</label>
+        </div>
+        <div>
+            <input type="text" id="level" name="level" value="<%-spell.level%>">
+            <label for="level">Level</label>
+        </div>
+
+        <div>
+            <span class="save" value="Save">Save</span>
+            <a href="/spells">Cancel</a>
+        </div>
     </section>
   </section>
 </div>

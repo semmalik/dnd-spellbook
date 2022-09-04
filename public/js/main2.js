@@ -1,17 +1,17 @@
-const deleteBtn = document.querySelectorAll('.spell-del')
-const editBtn = document.querySelectorAll('.spell-edit')
-const spellItem = document.querySelectorAll('span.not')
-const spellComplete = document.querySelectorAll('span.completed')
-const modalOverlay = document.querySelectorAll('.modal-overlay')
+const deleteBtn = document.querySelectorAll(".spell-del");
+const editBtn = document.querySelectorAll(".spell-edit");
+const spellItem = document.querySelectorAll("span.not");
+const spellComplete = document.querySelectorAll("span.completed");
+const modalOverlay = document.querySelectorAll(".modal-overlay");
 
 // Spell CRUD Event Listeners
-Array.from(deleteBtn).forEach((el)=>{
-    el.addEventListener('click', deleteSpell)
-})
+Array.from(deleteBtn).forEach((el) => {
+  el.addEventListener("click", deleteSpell);
+});
 
-Array.from(editBtn).forEach((el)=>{
-    el.addEventListener('click', toggleModal)
-})
+Array.from(editBtn).forEach((el) => {
+  el.addEventListener("click", toggleModal);
+});
 
 // Array.from(spellItem).forEach((el)=>{
 //     el.addEventListener('click', markComplete)
@@ -21,64 +21,87 @@ Array.from(editBtn).forEach((el)=>{
 //     el.addEventListener('click', markIncomplete)
 // })
 
-//Overlay Event listeners 
-Array.from(modalOverlay).forEach((el)=>{
-    el.addEventListener('click', toggleModal)
-})
+//Overlay Event listeners
+Array.from(modalOverlay).forEach((el) => {
+  el.addEventListener("click", toggleModal);
+});
 
 // Spell CRUD Functions
-async function deleteSpell(){
-    //because the delete button is in wrapper you are going to need to go up two
-    //levels to get to the li for the delete  Yay! same thing will be needed for editing as well
-    const spellId = this.parentNode.parentNode.dataset.id
-    try{
-        const response = await fetch('spells/deleteSpell', {
-            method: 'delete',
-            headers: {'Content-type': 'application/json'},
-            body: JSON.stringify({
-                'spellIdFromJSFile': spellId
-            })
-        })
-        const data = await response.json()
-        console.log(data)
-        location.reload()
-    }catch(err){
-        console.log(err)
-    }
-}
-
-async function editSpell(){
-    const spellId = this.parentNode.parentNode.dataset.id
-    try{
-        const response = await fetch('spells/editSpell', {
-            method: 'update', //update?
-            headers: {'Content-type': 'application/json'},
-            body: JSON.stringify({
-                'spellIdFromJSFile': spellId
-            })
-        })
-        const data = await response.json()
-        console.log(data)
-        location.reload()
-    }catch(err){
-        console.log(err)
-    }
-}
-
-async function toggleModal(){
-  console.log('toggling the modal!')
-  //get current classes of modal wrapper
-  const classList = document.querySelector('#modal-wrapper').classList;
-  
-  //toggle class for modal and overlay
-  if(classList.contains('show')) {
-    classList.remove('show');
-    classList.add('hide');
-  } else {
-    classList.remove('hide');
-    classList.add('show');
+async function deleteSpell() {
+  //because the delete button is in wrapper you are going to need to go up two
+  //levels to get to the li for the delete  Yay! same thing will be needed for editing as well
+  const spellId = this.parentNode.parentNode.dataset.id;
+  try {
+    const response = await fetch("spells/deleteSpell", {
+      method: "delete",
+      headers: { "Content-type": "application/json" },
+      body: JSON.stringify({
+        spellIdFromJSFile: spellId,
+      }),
+    });
+    const data = await response.json();
+    console.log(data);
+    location.reload();
+  } catch (err) {
+    console.log(err);
   }
-};
+}
+
+async function editSpell() {
+  const spellId = this.parentNode.parentNode.dataset.id;
+  try {
+    const response = await fetch("spells/editSpell", {
+      method: "PUT", //update?
+      headers: { "Content-type": "application/json" },
+      body: JSON.stringify({
+        spellIdFromJSFile: spellId,
+      }),
+    });
+    const data = await response.json();
+    console.log(data);
+    location.reload();
+  } catch (err) {
+    console.log(err);
+  }
+}
+
+//Should be what happens when the modal button is clicked
+async function saveSpell() {
+  const spellId = document.getElementById("spellId").getAttribute("spellId");
+  const spellName = document.getElementById("spellName").value;
+  const description = document.getElementById("description").value;
+  const level = document.getElementById("level").value;
+
+  try {
+    const response = await fetch(`/spells/saveSpell/${spellId}`, {
+      method: "put",
+      headers: { "Content-type": "application/json" },
+      body: JSON.stringify({
+        name: spellName,
+        description: description,
+        level: level,
+      }),
+    });
+    location.assign("/spells");
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+async function toggleModal() {
+  console.log("toggling the modal!");
+  //get current classes of modal wrapper
+  const classList = document.querySelector("#modal-wrapper").classList;
+
+  //toggle class for modal and overlay
+  if (classList.contains("show")) {
+    classList.remove("show");
+    classList.add("hide");
+  } else {
+    classList.remove("hide");
+    classList.add("show");
+  }
+}
 
 // async function markComplete(){
 //     const spellId = this.parentNode.dataset.id
