@@ -69,6 +69,25 @@ module.exports = {
           console.log(err)
       }
   },
+  saveSpell: async (req, res)=>{
+    try {
+      const spell = await Spell.findByIdAndUpdate(
+        {'_id': req.params._id}, 
+        {
+          "$set":{
+            'name': req.body.name,
+            'description': req.body.description,
+            'level': req.body.level
+          }
+        }
+      )
+      const updatedSpell = await Spell.findById(req.params._id)
+      res.send({redirectTo: '/spells'})
+
+    } catch (error) {
+      console.error(error)
+    }
+  },
 
   // markComplete: async (req, res)=>{
   //     try{

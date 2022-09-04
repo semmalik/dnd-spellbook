@@ -12,4 +12,6 @@ router.delete("/deleteSpell", spellsController.deleteSpell);
 // changed from router.update to router.put
 router.put("/editSpell", spellsController.editSpell);
 
+router.put("/saveSpell/:_id", spellsController.saveSpell);
+
 module.exports = router;

@@ -3,6 +3,7 @@ const editBtn = document.querySelectorAll(".spell-edit");
 const spellItem = document.querySelectorAll("span.not");
 const spellComplete = document.querySelectorAll("span.completed");
 const modalOverlay = document.querySelectorAll(".modal-overlay");
+const saveBtn = document.querySelector('.save')
 
 // Spell CRUD Event Listeners
 Array.from(deleteBtn).forEach((el) => {
@@ -10,7 +11,7 @@ Array.from(deleteBtn).forEach((el) => {
 });
 
 Array.from(editBtn).forEach((el) => {
-  el.addEventListener("click", toggleModal);
+  el.addEventListener("click", editSpell);
 });
 
 // Array.from(spellItem).forEach((el)=>{
@@ -25,6 +26,10 @@ Array.from(editBtn).forEach((el) => {
 Array.from(modalOverlay).forEach((el) => {
   el.addEventListener("click", toggleModal);
 });
+
+if(saveBtn != null) {
+    saveBtn.addEventListener('click', saveSpell)
+}
 
 // Spell CRUD Functions
 async function deleteSpell() {
@@ -49,20 +54,9 @@ async function deleteSpell() {
 
 async function editSpell() {
   const spellId = this.parentNode.parentNode.dataset.id;
-  try {
-    const response = await fetch("spells/editSpell", {
-      method: "PUT", //update?
-      headers: { "Content-type": "application/json" },
-      body: JSON.stringify({
-        spellIdFromJSFile: spellId,
-      }),
-    });
-    const data = await response.json();
-    console.log(data);
-    location.reload();
-  } catch (err) {
-    console.log(err);
-  }
+  toggleModal();
+  //Need to get the spell data and pass it to the modal somehow without reloading
+  //Easiest way might be a route on the backend to get a spell by id
 }
 
 //Should be what happens when the modal button is clicked
