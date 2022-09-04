@@ -11,7 +11,7 @@ Array.from(deleteBtn).forEach((el) => {
 });
 
 Array.from(editBtn).forEach((el) => {
-  el.addEventListener("click", editSpell);
+  el.addEventListener("click", getSpell);
 });
 
 // Array.from(spellItem).forEach((el)=>{
@@ -52,7 +52,9 @@ async function deleteSpell() {
   }
 }
 
-async function editSpell() {
+
+//changed function name from editSpell to getSpell to send data to modal
+async function getSpell() {
   //edit spell needs school added to it so it matches the model
   //also need to validate what the user enters
   const spellId = this.parentNode.parentNode.dataset.id;
@@ -60,9 +62,13 @@ async function editSpell() {
   //Need to get the spell data and pass it to the modal somehow without reloading
   //Easiest way might be a route on the backend to get a spell by id
   const modalSpellId = document.getElementById("spellId");
-  const spellName = document.getElementById('spellName').value;
+  const spellName = document.getElementById('spellName');
   const description = document.getElementById("description");
   const level = document.getElementById("level");
+  
+  const response = await fetch(`spells/getSpell/${spellId}`)
+  
+  
   
   
   

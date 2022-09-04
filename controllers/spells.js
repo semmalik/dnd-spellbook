@@ -59,12 +59,12 @@ module.exports = {
           console.log(err)
       }
   },
-  editSpell: async (req, res)=>{
+  getSpell: async (req, res)=>{
       console.log(req.body.spellIdFromJSFile)
       try{
-          await Spell.findOneAndDelete({_id:req.body.spellIdFromJSFile}) // ????
-          console.log('Spell Edited')
-          res.json('Edited it')
+          const spell = await Spell.findById(req.params._id) // ????
+          console.log('found spell')
+          res.send(spell)
       }catch(err){
           console.log(err)
       }
