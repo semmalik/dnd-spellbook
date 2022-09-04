@@ -57,9 +57,7 @@ async function deleteSpell() {
 async function getSpell() {
   //edit spell needs school added to it so it matches the model
   //also need to validate what the user enters
-  console.log('inside get spell main.js function')
   const spellId = this.parentNode.parentNode.dataset.id;
-  console.log(`>>>>>>>>>>>>>>>>${spellId}`)
   toggleModal();
   //Need to get the spell data and pass it to the modal somehow without reloading
   //Easiest way might be a route on the backend to get a spell by id
@@ -73,13 +71,13 @@ async function getSpell() {
             method: 'get',
             headers: {'Content-type': 'application/json'}
         })
-  console.log(response)
+  .then((res) => res.json())
   
   
   modalSpellId.setAttribute('spellId',`${spellId}`)
-  spellName.value = spellName
-  description.value = 'Description from backend'
-  level.value = '42'
+  spellName.value = response.name
+  description.value = response.description
+  level.value = response.level
 }
 
 //Should be what happens when the modal button is clicked
