@@ -61,11 +61,6 @@ async function getSpell() {
   toggleModal();
   //Need to get the spell data and pass it to the modal somehow without reloading
   //Easiest way might be a route on the backend to get a spell by id
-  const modalSpellId = document.getElementById("spellId");
-  const spellName = document.getElementById('spellName');
-  const description = document.getElementById("description");
-  const level = document.getElementById("level");
-  
   
   const response = await fetch(`spells/getSpell/${spellId}`, {
             method: 'get',
@@ -73,6 +68,10 @@ async function getSpell() {
         })
   .then((res) => res.json())
   
+  const modalSpellId = document.getElementById("spellId");
+  const spellName = document.getElementById('spellName');
+  const description = document.getElementById("description");
+  const level = document.getElementById("level");
   
   modalSpellId.setAttribute('spellId',`${spellId}`)
   spellName.value = response.name

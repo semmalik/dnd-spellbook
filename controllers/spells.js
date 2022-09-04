@@ -62,8 +62,7 @@ module.exports = {
   getSpell: async (req, res)=>{
       console.log(req.body.spellIdFromJSFile)
       try{
-          const spell = await Spell.findById(req.params._id) // ????
-          console.log(`found spell: ${spell}`)
+          const spell = await Spell.findById(req.params._id) 
           res.send(spell)
       }catch(err){
           console.log(err)
