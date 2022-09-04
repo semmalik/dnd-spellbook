@@ -60,12 +60,14 @@ async function editSpell() {
   //Need to get the spell data and pass it to the modal somehow without reloading
   //Easiest way might be a route on the backend to get a spell by id
   const modalSpellId = document.getElementById("spellId");
-  const spellName = document.getElementById('spellName');
+  const spellName = document.getElementById('spellName').value;
   const description = document.getElementById("description");
   const level = document.getElementById("level");
   
+  
+  
   modalSpellId.setAttribute('spellId',`${spellId}`)
-  spellName.value = 'Name from backend'
+  spellName.value = spellName
   description.value = 'Description from backend'
   level.value = '42'
 }
