@@ -54,6 +54,7 @@ async function deleteSpell() {
 
 async function editSpell() {
   //edit spell needs school added to it so it matches the model
+  //also need to validate what the user enters
   const spellId = this.parentNode.parentNode.dataset.id;
   toggleModal();
   //Need to get the spell data and pass it to the modal somehow without reloading
