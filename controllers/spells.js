@@ -42,8 +42,7 @@ module.exports = {
 
       //not found
       if (spell["error"]) {
-        console.log("Spell not found!");
-        console.log(spell);
+        console.log('Spell not found!')
       } else {
         await Spell.create({
           name: spell.name,

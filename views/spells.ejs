@@ -28,6 +28,7 @@
             <option value='<%= n %>'>
           <%   }   %>
         </datalist>
+              
         <input type="submit" value="Add Spell">
       </form>
       
@@ -36,7 +37,7 @@
     
     <section class="max-width">
       <ul>
-      <% spells.forEach( spell => { %>
+      <% spells.reverse().forEach( spell => { %>
               <li class='spell' data-id='<%=spell._id%>'>
                 <div class="spell-heading">
                   <h3 class='spell-name'><%= spell.name %></h3>
