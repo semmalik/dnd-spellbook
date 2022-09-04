@@ -53,22 +53,25 @@ async function deleteSpell() {
 }
 
 async function editSpell() {
+  //edit spell needs school added to it so it matches the model
   const spellId = this.parentNode.parentNode.dataset.id;
   toggleModal();
   //Need to get the spell data and pass it to the modal somehow without reloading
   //Easiest way might be a route on the backend to get a spell by id
+  const modalSpellId = document.getElementById("spellId");
   const spellName = document.getElementById('spellName');
   const description = document.getElementById("description");
   const level = document.getElementById("level");
   
-  spellName.value = 'Name value from backend'
-  desc.value = 'Name value from backend'
-  spellName.value = 'Name value from backend'
-  console.log(spellName.value);
+  modalSpellId.setAttribute('spellId',`${spellId}`)
+  spellName.value = 'Name from backend'
+  description.value = 'Description from backend'
+  level.value = '42'
 }
 
 //Should be what happens when the modal button is clicked
 async function saveSpell() {
+  console.log('test')
   const spellId = document.getElementById("spellId").getAttribute("spellId");
   const spellName = document.getElementById("spellName").value;
   const description = document.getElementById("description").value;
