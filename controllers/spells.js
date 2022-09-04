@@ -26,7 +26,7 @@ module.exports = {
         allSpellNames.push(sp['name'])
       }
     
-      res.render("spells.ejs", { spells: spells, user: req.user, allSpellNames: allSpellNames});
+      res.render("spells.ejs", {spells: spells, user: req.user, allSpellNames: allSpellNames});
     } catch (err) {
       console.log(err);
     }
