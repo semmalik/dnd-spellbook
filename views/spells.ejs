@@ -10,7 +10,8 @@
 </head>
 <body>
   <main class="viewport-wrapper">
-    <h1 class="spellList-heading">Spells</h1>
+    <h1 class="spellList-heading"><%= `${user.userName[0].toUpperCase()}${user.userName.slice(1)}` %>'s Spellbook</h1>
+    <% if ()
     <section class="max-width">
       <ul>
       <% spells.forEach( spell => { %>
@@ -42,7 +43,12 @@
     
     <section class="max-width">
       <form action="/spells/createSpell" method='POST'>
-        <input type="text" placeholder="Enter a spell name" name='name'>
+        <input type="text"  list="allSpells" placeholder="Enter a spell name" name='name'>
+        <datalist id="allSpells">
+          <%   for (let n of allSpellNames) {    %>
+            <option value='<%= n %>'>
+          <%   }   %>
+        </datalist>
         <input type="submit">
       </form>
       <a href="/logout">Logout</a>

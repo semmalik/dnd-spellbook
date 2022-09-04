@@ -15,7 +15,18 @@ module.exports = {
         //Given that this object is just being used to display data in a view it should be fine
         return {...spell.toObject(), level};
       })
-      res.render("spells.ejs", { spells: spells, user: req.user });
+      
+      // Passing the view all spell names in the api
+      const response = await fetch(
+        `https://www.dnd5eapi.co/api/spells/`
+      );
+      const allSpells = await response.json()
+      let allSpellNames = []
+      for (const sp of allSpells['results']) {
+        allSpellNames.push(sp['name'])
+      }
+    
+      res.render("spells.ejs", { spells: spells, user: req.user, allSpellNames: allSpellNames});
     } catch (err) {
       console.log(err);
     }
