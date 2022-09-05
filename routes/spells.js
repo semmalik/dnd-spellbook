@@ -7,7 +7,7 @@ router.get("/", ensureAuth, spellsController.getSpells);
 
 router.post("/createSpell", spellsController.createSpell);
 
-router.post("/createCustomSpell", spellsController.createSpell);
+router.post("/createCustomSpell", spellsController.createCustomSpell);
 
 router.delete("/deleteSpell", spellsController.deleteSpell);
 

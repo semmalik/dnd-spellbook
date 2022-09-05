@@ -6,7 +6,7 @@ const modalOverlay = document.querySelectorAll(".modal-overlay");
 const saveBtn = document.querySelector('.save')
 
 
-document.querySelector('.createCustom').addEventListener('click', enterCustomSpell)
+document.querySelector('.enterCustomSpell').addEventListener('click', enterCustomSpell)
 
 
 // Spell CRUD Event Listeners
@@ -92,20 +92,33 @@ async function getSpell() {
 async function saveSpell() {
   console.log('test')
   const spellId = document.getElementById("spellId").getAttribute("spellId");
+  
   const spellName = document.getElementById("spellName").value;
   const description = document.getElementById("description").value;
   const level = document.getElementById("level").value;
 
   try {
-    const response = await fetch(`/spells/saveSpell/${spellId}`, {
+    if (spellId != null) {
+      const response = await fetch(`/spells/saveSpell/${spellId}`, {
       method: "put",
       headers: { "Content-type": "application/json" },
       body: JSON.stringify({
         name: spellName,
         description: description,
         level: level,
-      }),
-    });
+      })
+    })
+    } else {
+      const response = await fetch('/spells/createCustomSpell', {
+      method: "post",
+      headers: { "Content-type": "application/json" },
+      body: JSON.stringify({
+        name: spellName,
+        description: description,
+        level: level,
+      })
+    })
+    }
     location.assign("/spells");
   } catch (error) {
     console.log(error);

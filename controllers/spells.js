@@ -71,11 +71,12 @@ module.exports = {
   },
   createCustomSpell: async (req, res) => {
     try {
+      console.log('inside custom spell controller')
       await Spell.create({
           name: req.body.spellName,
           description: req.body.description,
           level: req.body.level,
-          school: req.body.schoolName,
+          // school: req.body.schoolName,
           userId: req.user.id,
         })
       console.log("Spell has been added!");
