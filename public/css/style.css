@@ -113,6 +113,13 @@ a.spell:hover {
   background: #6CDFEA;
   transition: 0.3s;
 }
+
+/*Login View */
+input.spell.hover:hover{
+  background: #6CDFEA;
+  transition: 0.3s;
+}
+
 /* Spell View */
 
 .spellList-heading {
