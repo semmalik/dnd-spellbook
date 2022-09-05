@@ -44,6 +44,8 @@ if(saveBtn != null) {
 async function deleteSpell() {
   //because the delete button is in wrapper you are going to need to go up two
   //levels to get to the li for the delete  Yay! same thing will be needed for editing as well
+  console.log('is this delete function working?')
+  
   const spellId = this.parentNode.parentNode.dataset.id;
   try {
     const response = await fetch("spells/deleteSpell", {
