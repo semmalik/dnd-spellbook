@@ -108,13 +108,17 @@ async function saveSpell() {
         level: level,
       })
     })
-    } else {
+    } 
+    //If there is no ID, post new spell
+    else {
       const response = await fetch('/spells/createCustomSpell', {
       method: "post",
       headers: { "Content-type": "application/json" },
       body: JSON.stringify({
         name: spellName,
         description: description,
+        //hardcoded until this field is added to modal
+        school: 'testing',
         level: level,
       })
     })
@@ -127,21 +131,6 @@ async function saveSpell() {
 
 function enterCustomSpell() {
   toggleModal()
-  // const element = document.getElementById("demo");
-  // element.remove();
-}
-
-async function saveCustomSpell() {
-  
-  const response = await fetch('/spells/createCustomSpell', {
-    method: 'put',
-    headers: { "Content-type": "application/json" },
-      body: JSON.stringify({
-        // name: spellName,
-        // description: description,
-        // level: level,
-      }) 
-  })
 }
 
 async function toggleModal() {
