@@ -6,13 +6,13 @@ A Simple Dungeons & Dragons Spellbook app using the 5th edition D&D API. Search 
 
 # Objectives
 
-- It's a full-stack, beginner level app created to understand MVC architecture 
+ - Create a full-stack, beginner level app to practice MVC architecture, user authorization, and API integration.
 
 ---
 
 # Who is this for? 
 
-- It's for beginners & intermediates with a little more experience, to help understand the various aspects of building a node app with some complex features.
+- Beginner & Intermediate programmers with a little more experience, to help understand the various aspects of building a node app with some complex features.
 
 ---
 
@@ -24,7 +24,7 @@ bcrypt, connect-mongo, dotenv, ejs, express, express-flash, express-session, mon
 
 # Install all the dependencies or node packages used for development via Terminal
 
-`npm install`
+- `npm install`
 
 - be sure to add your own DB_STRING in the .env file. 
 
