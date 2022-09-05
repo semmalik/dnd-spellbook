@@ -6,7 +6,7 @@ A Simple Dungeons & Dragons Spellbook app using the 5th edition D&D API. Search 
 
 # Objectives
 
-- It's a full-stack, beginner level app created to understand MVC architecture. 
+- It's a full-stack, beginner level app created to understand MVC architecture 
 
 ---
 
@@ -30,7 +30,11 @@ bcrypt, connect-mongo, dotenv, ejs, express, express-flash, express-session, mon
 
 ---
 
-# Things to add
-- consistent header and footer that contains a logout button
-- 
+# Things to add before deployment
+- CSS and tidying up of Signup Page
+- CSS for new Custom Spells
+- CSS for Edit modal
+- Some kind of create spell validation that alerts the user if spell doesn't exist (maybe ask if they'd like to add it as new custom spell?)
+- add "partials" for consistent header and footer across pages?
+- D&D themed background/logos?
 
