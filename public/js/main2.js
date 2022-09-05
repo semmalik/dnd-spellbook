@@ -5,6 +5,10 @@ const spellComplete = document.querySelectorAll("span.completed");
 const modalOverlay = document.querySelectorAll(".modal-overlay");
 const saveBtn = document.querySelector('.save')
 
+
+document.querySelector('.createCustom').addEventListener('click', enterCustomSpell)
+
+
 // Spell CRUD Event Listeners
 
 Array.from(deleteBtn).forEach((el) => {
@@ -108,8 +112,21 @@ async function saveSpell() {
   }
 }
 
-async function createCustomSpell() {
+function enterCustomSpell() {
   toggleModal()
+}
+
+async function saveCustomSpell() {
+  
+  const response = await fetch('/spells/createCustomSpell', {
+    method: 'put',
+    headers: { "Content-type": "application/json" },
+      body: JSON.stringify({
+        // name: spellName,
+        // description: description,
+        // level: level,
+      }) 
+  })
 }
 
 async function toggleModal() {
