@@ -4,25 +4,28 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
+    <title>Login</title>
 </head>
 <body>
-    <% if (locals.messages.errors) { %>
+  <section class="viewport-wrapper">
+    <h1 class= "index" >Login to access your spelllist!</h1>
+      <% if (locals.messages.errors) { %>
         <% messages.errors.forEach( el => { %>
             <div class="alert alert-danger"><%= el.msg %></div>
         <% }) %>    
-    <% } %>
-    <% if (locals.messages.info) { %>
+        <% } %>
+       <% if (locals.messages.info) { %>
         <% messages.info.forEach( el => { %>
             <div class="alert alert-danger"><%= el.msg %></div>
         <% }) %>    
-    <% } %>
+        <% } %>
     <form  class="flex-centered" action="/login" method="POST">
-        <input type="email" name="email" placeholder="Email">
-        <input type="password" name="password" placeholder="Password">
-        <input type="submit">
+        <input class="spell" type="email" name="email" placeholder="Email">
+        <input class="spell" type="password" name="password" placeholder="Password">
+        <input class="spell" type="submit">
     </form>
+  </section> 
 </body>
 </html>
