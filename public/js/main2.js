@@ -71,7 +71,7 @@ async function getSpell() {
             method: 'get',
             headers: {'Content-type': 'application/json'}
         })
-  .then((res) => res.json())
+    .then((res) => res.json())
   
   const modalSpellId = document.getElementById("spellId");
   const spellName = document.getElementById('spellName');
