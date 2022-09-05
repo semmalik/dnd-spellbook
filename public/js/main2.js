@@ -1,4 +1,3 @@
-const addBtn = document.querySelectorAll(".spell-add")
 const deleteBtn = document.querySelectorAll(".spell-del");
 const editBtn = document.querySelectorAll(".spell-edit");
 const spellItem = document.querySelectorAll("span.not");
@@ -7,7 +6,6 @@ const modalOverlay = document.querySelectorAll(".modal-overlay");
 const saveBtn = document.querySelector('.save')
 
 // Spell CRUD Event Listeners
-addBtn.addEventListener("click", addSpell);
 
 Array.from(deleteBtn).forEach((el) => {
   el.addEventListener("click", deleteSpell);
@@ -37,9 +35,6 @@ if(saveBtn != null) {
 // Spell CRUD Functions
 
 // If there is no spell
-async function addSpell() {
-  
-}
 
 
 async function deleteSpell() {
