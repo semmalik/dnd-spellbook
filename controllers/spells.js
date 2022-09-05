@@ -76,7 +76,7 @@ module.exports = {
           name: req.body.spellName,
           description: req.body.description,
           level: req.body.level,
-          // school: req.body.schoolName,
+          school: 'testing',
           userId: req.user.id,
         })
       console.log("Spell has been added!");

@@ -92,13 +92,13 @@ async function getSpell() {
 async function saveSpell() {
   console.log('test')
   const spellId = document.getElementById("spellId").getAttribute("spellId");
-  
+  console.log(`spell id: ${spellId}`)
   const spellName = document.getElementById("spellName").value;
   const description = document.getElementById("description").value;
   const level = document.getElementById("level").value;
 
   try {
-    if (spellId != null) {
+    if (spellId != "") {
       const response = await fetch(`/spells/saveSpell/${spellId}`, {
       method: "put",
       headers: { "Content-type": "application/json" },
@@ -127,6 +127,8 @@ async function saveSpell() {
 
 function enterCustomSpell() {
   toggleModal()
+  // const element = document.getElementById("demo");
+  // element.remove();
 }
 
 async function saveCustomSpell() {
