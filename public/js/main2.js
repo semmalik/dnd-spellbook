@@ -5,15 +5,17 @@ const spellComplete = document.querySelectorAll("span.completed");
 const modalOverlay = document.querySelectorAll(".modal-overlay");
 const saveBtn = document.querySelector('.save')
 
-
 document.querySelector('.enterCustomSpell').addEventListener('click', enterCustomSpell)
 
 
 // Spell CRUD Event Listeners
 
 Array.from(deleteBtn).forEach((el) => {
+  console.log('is this thinggy here running???')
   el.addEventListener("click", deleteSpell);
 });
+
+
 
 Array.from(editBtn).forEach((el) => {
   el.addEventListener("click", getSpell);
@@ -43,9 +45,7 @@ if(saveBtn != null) {
 
 async function deleteSpell() {
   //because the delete button is in wrapper you are going to need to go up two
-  //levels to get to the li for the delete  Yay! same thing will be needed for editing as well
-  console.log('is this delete function working?')
-  
+  //levels to get to the li for the delete  Yay! same thing will be needed for editing as well  
   const spellId = this.parentNode.parentNode.dataset.id;
   try {
     const response = await fetch("spells/deleteSpell", {
