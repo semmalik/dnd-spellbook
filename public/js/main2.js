@@ -108,6 +108,10 @@ async function saveSpell() {
   }
 }
 
+async function createCustomSpell() {
+  toggleModal()
+}
+
 async function toggleModal() {
   console.log("toggling the modal!");
   //get current classes of modal wrapper

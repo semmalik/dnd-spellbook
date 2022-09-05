@@ -7,14 +7,15 @@ router.get("/", ensureAuth, spellsController.getSpells);
 
 router.post("/createSpell", spellsController.createSpell);
 
+router.post("/createCustomSpell", spellsController.createSpell);
+
 router.delete("/deleteSpell", spellsController.deleteSpell);
 
 // changed from router.update to router.put
 // router.put("/editSpell", spellsController.editSpell);
 
-//getting spell to send to modal
+//getting spell to send to modal for editing
 router.get("/getSpell/:_id", spellsController.getSpell);
-
 
 router.put("/saveSpell/:_id", spellsController.saveSpell);
 

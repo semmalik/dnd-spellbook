@@ -69,6 +69,22 @@ module.exports = {
           console.log(err)
       }
   },
+  createCustomSpell: async (req, res) => {
+    try {
+      await Spell.create({
+          name: req.body.spellName,
+          description: req.body.description,
+          level: req.body.level,
+          school: req.body.schoolName,
+          userId: req.user.id,
+        })
+      console.log("Spell has been added!");
+      res.redirect("/spells");
+      
+    }catch(err) {
+      console.log(err)
+    }
+  },
   getSpell: async (req, res)=>{
       console.log(req.body.spellIdFromJSFile)
       try{
