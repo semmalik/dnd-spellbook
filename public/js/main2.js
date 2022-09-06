@@ -6,7 +6,7 @@ const modalOverlay = document.querySelectorAll(".modal-overlay");
 const saveBtn = document.querySelector('.save')
 
 
-//document.querySelector('.enterCustomSpell').addEventListener('click', enterCustomSpell)
+// document.querySelector('.enterCustomSpell').addEventListener('click', enterCustomSpell)
 
 
 // Spell CRUD Event Listeners
