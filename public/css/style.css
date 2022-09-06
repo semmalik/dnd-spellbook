@@ -172,7 +172,9 @@ input.spell.hover:hover{
 }
 
 .logout-button {
-padding-bottom: 15px
+  padding-bottom: 15px;
+  display: flex;
+  align-items: flex-end;
 }
 
 /* Modal */
