@@ -11,9 +11,6 @@ router.post("/createCustomSpell", spellsController.createCustomSpell);
 
 router.delete("/deleteSpell", spellsController.deleteSpell);
 
-// changed from router.update to router.put
-// router.put("/editSpell", spellsController.editSpell);
-
 //getting spell to send to modal for editing
 router.get("/getSpell/:_id", spellsController.getSpell);
 
