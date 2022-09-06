@@ -82,11 +82,13 @@ async function getSpell() {
   const modalSpellId = document.getElementById("spellId");
   const spellName = document.getElementById('spellName');
   const description = document.getElementById("description");
+  const school = document.getElementById("school");
   const level = document.getElementById("level");
   
   modalSpellId.setAttribute('spellId',`${spellId}`)
   spellName.value = response.name
   description.value = response.description
+  school.value = response.school
   level.value = response.level
 }
 
@@ -97,6 +99,7 @@ async function saveSpell() {
   console.log(`spell id: ${spellId}`)
   const spellName = document.getElementById("spellName").value;
   const description = document.getElementById("description").value;
+  const school = document.getElementById("school").value;
   const level = document.getElementById("level").value;
 
   try {
@@ -107,6 +110,7 @@ async function saveSpell() {
       body: JSON.stringify({
         name: spellName,
         description: description,
+        school: school,
         level: level,
       })
     })
@@ -119,8 +123,7 @@ async function saveSpell() {
       body: JSON.stringify({
         name: spellName,
         description: description,
-        //hardcoded until this field is added to modal
-        school: 'testing',
+        school: school,
         level: level,
       })
     })

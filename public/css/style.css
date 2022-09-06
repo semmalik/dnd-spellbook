@@ -171,10 +171,14 @@ input.spell.hover:hover{
   font-size: 1.25rem;
 }
 
-.logout-button {
-  padding-bottom: 15px;
+.spellflex {
   display: flex;
-  align-items: flex-end;
+  justify-content: space-between;
+  
+}
+
+.logout-button {
+  justify-content: center;
 }
 
 /* Modal */
